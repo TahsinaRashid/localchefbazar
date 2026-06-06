@@ -7,6 +7,9 @@ import Meals from "../pages/Meals/Meals";
 import PrivateRoute from "./PrivateRoute";
 import MealDetails from "../pages/MealDetails/MealDetails";
 import Checkout from "../Checkout/Checkout";
+import DashboardLayout from "../layouts/DashboardLayout";
+import AddMeal from "../pages/Dashboard/Chef/AddMeal";
+import PlatformStats from "../pages/Dashboard/Admin/PlatformStats";
 
 export const router = createBrowserRouter([
   {
@@ -33,7 +36,15 @@ export const router = createBrowserRouter([
       {
     path: "/checkout",
     element: <PrivateRoute><Checkout /></PrivateRoute>
-}
+},
+{
+    path: "add-meal",
+    element: <AddMeal />
+},
+{
+    path: "platform-stats",
+    element: <PlatformStats />
+},
       {
     path: "/meal/:id",
     element: <PrivateRoute><MealDetails /></PrivateRoute>
