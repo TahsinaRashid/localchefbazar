@@ -12,7 +12,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    errorElement: <div>404 Not Found! (Tor custom error page)</div>,
+    errorElement: <div>404 Not Found!</div>,
     children: [
       {
         path: "/",
@@ -39,5 +39,19 @@ export const router = createBrowserRouter([
     element: <PrivateRoute><MealDetails /></PrivateRoute>
 }
     ],
+    {
+        path: "/dashboard",
+        element: <PrivateRoute><DashboardLayout /></PrivateRoute>,
+        children: [
+            {
+                path: "profile",
+                element: <div>Welcome to profile dashboard screen context view.</div> // tor structural component boshbe
+            },
+            // general user routes dummy template injection targets
+            { path: "my-orders", element: <div>User core processing billing list database mapping panel.</div> },
+            { path: "my-reviews", element: <div>Review components list management panel.</div> },
+            // chef and admin dashboard blocks can follow standard tree layout mapping here
+        ]
+    }
   },
 ]);
